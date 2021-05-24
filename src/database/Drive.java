@@ -22,9 +22,9 @@ public class Drive {
   public static Connection conn() {
     try {
       String driver = "com.mysql.cj.jdbc.Driver";
-      String url = "jdbc:mysql://127.0.0.1:3306/testdb";
-      String username = "root"; // THESE ARE NOT ACTIVE USERS ON MY MACHINE TO AVOID SECURITY RISKS.
-      String pass = "epicodus";
+      String url = "jdbc:mysql://Squidward:3306/testdb";
+      String username = "Squidward"; // THESE ARE NOT ACTIVE USERS ON MY MACHINE TO AVOID SECURITY RISKS.
+      String pass = "Squidward";
       Class.forName(driver);
       Connection connect = DriverManager.getConnection(url, username, pass);
       return connect;
