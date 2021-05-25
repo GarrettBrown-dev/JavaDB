@@ -37,7 +37,8 @@ public class Drive {
   // Select statements(s)
   public static ArrayList<String> select() throws Exception {
     Connection con = conn();
-
+    // Where statement, order by statement (asc or desc.) limit, multiple tables.
+    // Fields: url, likes, comments, public, views, id.
     PreparedStatement statement = con.prepareStatement("SELECT * FROM youtube");
     // PreparedStatement statement = con.prepareStatement("SELECT * FROM youtube
     // WHERE author = 'Tim'");
