@@ -22,9 +22,9 @@ public class Drive {
   public static Connection conn() {
     try {
       String driver = "com.mysql.cj.jdbc.Driver";
-      String url = "jdbc:mysql://127.0.0.1:3306/testdb";
-      String username = "root"; // THESE ARE NOT ACTIVE USERS ON MY MACHINE TO AVOID SECURITY RISKS.
-      String pass = "epicodus";
+      String url = "jdbc:mysql://Squidward:3306/testdb";
+      String username = "Squidward"; // THESE ARE NOT ACTIVE USERS ON MY MACHINE TO AVOID SECURITY RISKS.
+      String pass = "Squidward";
       Class.forName(driver);
       Connection connect = DriverManager.getConnection(url, username, pass);
       return connect;
@@ -37,7 +37,27 @@ public class Drive {
   // Select statements(s)
   public static ArrayList<String> select() throws Exception {
     Connection con = conn();
+
     PreparedStatement statement = con.prepareStatement("SELECT * FROM youtube");
+    // PreparedStatement statement = con.prepareStatement("SELECT * FROM youtube
+    // WHERE author = 'Tim'");
+    // PreparedStatement statement = con.prepareStatement("SELECT * FROM facebook,
+    // youtube WHERE facebook.user = youtube.user AND facebook.likes =
+    // youtube.likes");
+    // PreparedStatement statement = con.prepareStatement("SELECT * FROM facebook,
+    // youtube WHERE facebook.user = youtube.user OR facebook.likes =
+    // youtube.likes");
+
+    // PreparedStatement statement = con.prepareStatement("SELECT * FROM facebook
+    // WHERE user = 'Tim' ORDER BY user ASC");
+    // PreparedStatement statement = con.prepareStatement("SELECT * FROM facebook
+    // WHERE user = 'Tim' ORDER BY user DESC");
+
+    // PreparedStatement statement = con.prepareStatement("SELECT * FROM facebook
+    // WHERE user = 'Tim' LIMIT 1");//Gets only 1 record...
+    // PreparedStatement statement = con.prepareStatement("SELECT * FROM facebook
+    // WHERE user = 'Tim' LIMIT 1 ORDER BY user DESC");// Limits to first descending
+    // result.
     ResultSet result = statement.executeQuery();
     ArrayList<String> array = new ArrayList<String>();
     while (result.next()) {
